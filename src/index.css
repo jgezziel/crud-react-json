@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Overpass Variable", sans-serif;
+	@apply bg-zinc-100 text-zinc-900;
+}
+
+::-moz-selection {
+	@apply bg-zinc-950 text-white;
+}
+::selection {
+	@apply bg-zinc-950 text-white;
+}
+
+*::-webkit-scrollbar {
+	width: 0.7em;
+}
+*::-webkit-scrollbar-thumb {
+	@apply rounded-md border-2 border-solid border-zinc-500 bg-zinc-950;
+}
+
+@layer components {
+	.__row {
+		@apply -mx-4 flex flex-wrap;
+	}
+	.__col {
+		@apply relative w-full px-4;
+	}
+
+	.__nav {
+		@apply fixed left-0 top-0 z-20 w-full bg-zinc-900 py-4 text-center text-white;
+	}
+	.__btn {
+		@apply rounded px-3 py-2 transition-all duration-300 ease-in-out hover:shadow-lg;
+	}
+	.__btn.__btn-add {
+		@apply bg-zinc-200 font-semibold text-black hover:bg-zinc-100 hover:shadow-lg hover:shadow-zinc-500/50;
+	}
+	.__btn.__btn-delete {
+		@apply bg-red-500 text-white hover:bg-red-600 hover:shadow-lg hover:shadow-red-500/50;
+	}
+	.__btn.__btn-edit {
+		@apply bg-amber-500 text-white hover:bg-amber-600 hover:shadow-lg hover:shadow-amber-500/50;
+	}
+
+	.__cont-articles {
+		@apply columns-1 sm:columns-2 md:columns-3 lg:columns-3 xl:columns-4 xxl:columns-4;
+	}
+	.__item_article {
+		@apply mx-auto my-4 overflow-hidden;
+	}
+
+	.__card {
+		@apply rounded-md border border-zinc-200 bg-white shadow-md transition-all hover:shadow-lg hover:shadow-zinc-500/50;
+	}
+
+	.__card-body {
+		@apply p-4;
+	}
+	.__card-title {
+		@apply mb-4 text-center text-xl font-bold leading-6;
+	}
+	.__card img {
+		@apply mb-4 w-full rounded-md p-4;
+	}
+	.__card .__badge {
+		@apply rounded-sm bg-zinc-200 px-2 py-1 text-sm font-semibold capitalize text-zinc-600;
+	}
+	.__label {
+		@apply -mt-6 mb-2 block text-2xl font-semibold text-zinc-800;
+	}
+	.__input {
+		@apply w-full rounded border border-slate-300 px-2 py-3 text-xl font-bold text-black placeholder:text-slate-300 hover:border-zinc-500 focus:border-zinc-700 focus:outline-none focus:ring-1 focus:ring-zinc-700;
+	}
+	.__alert {
+		@apply border-l-4 px-4 py-2 sm:px-6;
+	}
+	.__alert p {
+		@apply text-sm sm:text-lg;
+	}
+	.__alert-error {
+		@apply border-red-500 bg-red-50;
+	}
+	.__alert-error p {
+		@apply text-red-600;
+	}
+}
